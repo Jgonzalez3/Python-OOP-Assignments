@@ -15,7 +15,7 @@ class Animal(object):
         return self
 class Dog(Animal):
     def __init__(self, name):
-        super(Dog, self).__init__(name, 150) #copys parent init attributes 
+        super(Dog, self).__init__(name, 150) # name is here since name is in __init__ function above, here health is not needed as attribute since health not a parameter of __init__ function for this class 
         self.name = name
     def Pet(self):
         self.health += 5
@@ -28,14 +28,14 @@ class Dragon(Animal):
         self.health -= 10
         return self
     def DisplayHealth(self):
-        print self.health
+        super(Dragon, self).DisplayHealth()
         print "I am a Dragon"
         return self
 
 animal1 = Animal("Juan", 100)
 print animal1.Walk().Walk().Walk().Run().Run().DisplayHealth()
 
-dog1 = Dog("Bernie")
+dog1 = Dog("bernie")
 dog1.Walk().Walk().Walk().Pet().Pet().DisplayHealth()
 
 dragon1 = Dragon("Snake")
